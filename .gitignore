@@ -1,0 +1,79 @@
+##########################
+# OS-SPECIFIC
+##########################
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+##########################
+# IDEs & EDITORS
+##########################
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+# Eclipse
+.project
+.classpath
+.cproject
+.settings/
+bin/
+
+# VS Code
+.vscode/
+
+##########################
+# JAVA / BUILD TOOLS
+##########################
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+*.orig
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# Logs
+*.log
+
+##########################
+# OTHER COMMON EXCLUSIONS
+##########################
+
+# Backup / temp files
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Runtime data
+*.lock
+*.pid
+
+# Environment files
+.env
+.env.*
+
+##########################
+# OPTIONAL
+##########################
+
+*.txt
