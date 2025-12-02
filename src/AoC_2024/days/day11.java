@@ -25,7 +25,6 @@ public class day11 {
 		//System.out.println();
 		part2After1YearAtHelmo();
 
-
 	}
 	
 	public static void part1() {
@@ -77,8 +76,8 @@ public class day11 {
 	 */
 	public static void part2() {
 		
-		String PathA = "src/resources/day11textA.txt";
-		String PathB = "src/resources/day11textB.txt";
+		String PathA = "src/AoC_2024/resources/day11textA.txt";
+		String PathB = "src/AoC_2024/resources/day11textB.txt";
 		int batchSize = 10000;
 		int totalTime= 0;
 		

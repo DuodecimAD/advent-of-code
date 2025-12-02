@@ -15,8 +15,8 @@ public class day5 {
 	}
 	
 	public static void part1() {
-		String[] file = Fichier.lireLignes("src/resources/ex5Input1.txt");
-		String[] file2 = Fichier.lireLignes("src/resources/ex5Input2.txt");
+		String[] file = Fichier.lireLignes("src/AoC_2024/resources/ex5Input1.txt");
+		String[] file2 = Fichier.lireLignes("src/AoC_2024/resources/ex5Input2.txt");
 		
 
 		int indexA = -1, indexB = -1;

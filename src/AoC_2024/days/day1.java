@@ -8,11 +8,11 @@ import java.util.Arrays;
 public class day1 {
 	public static void main(String[] args) {
 
-//		String[] string = Fichier.lireLignes("src/resources/day1.txt");
+//		String[] string = Fichier.lireLignes("src/AoC_2024/resources/day1.txt");
 //        var result = TrierTableau(string);
 //		System.out.println(result);
 
-        String[] test = Fichier.lireLignes("AoC_2024/src/resources/day1.txt");
+        String[] test = Fichier.lireLignes("src/AoC_2024/resources/day1.txt");
 		similarity(test);
 }
 

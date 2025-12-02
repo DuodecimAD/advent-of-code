@@ -13,7 +13,7 @@ public class day2 {
 
 
 	public static void part1() {
-		String[] file = Fichier.lireLignes("src/resources/ex2Input2.txt");
+		String[] file = Fichier.lireLignes("src/AoC_2024/resources/ex2Input2.txt");
 
 		int count=0;
 
@@ -65,7 +65,7 @@ public class day2 {
 	}
 
 	public static void part2() {
-		String[] file = Fichier.lireLignes("src/resources/ex2Input2.txt");
+		String[] file = Fichier.lireLignes("src/AoC_2024/resources/ex2Input2.txt");
 
 		int count = 0;
 

@@ -18,7 +18,7 @@ public class day7 {
 	public static void part1() {
 		
 		char[] operators = {'+', '*'};
-		String[] string = Fichier.lireLignes("src/resources/ex7Input1.txt");
+		String[] string = Fichier.lireLignes("src/AoC_2024/resources/ex7Input1.txt");
 		ArrayList<String[]> stringArray = new ArrayList<String[]>();
 		long result = 0;
 		
@@ -77,7 +77,7 @@ public class day7 {
 	public static void part2() {
 						
 		char[] operators = {'+', '*', '|'};
-		String[] string = Fichier.lireLignes("src/resources/ex7Input1.txt");
+		String[] string = Fichier.lireLignes("src/AoC_2024/resources/ex7Input1.txt");
 		ArrayList<String[]> stringArray = new ArrayList<String[]>();
 		long result = 0;
 		
@@ -174,7 +174,7 @@ public class day7 {
 	public static void part2ForReal() {
 		
 		char[] operators = {'+', '*', '|'};
-		String[] string = Fichier.lireLignes("src/resources/ex7Input2.txt");
+		String[] string = Fichier.lireLignes("src/AoC_2024/resources/ex7Input2.txt");
 		ArrayList<String[]> stringArray = new ArrayList<String[]>();
 		long result = 0;
 		

@@ -27,8 +27,8 @@ public class day9 {
 	}
 		
 	public static void part1() {
-		//String[] string = Fichier.lireLignes("src/resources/day8Input1.txt");
-		Path file = Paths.get("src/resources/day9Input2.txt");
+		//String[] string = Fichier.lireLignes("src/AoC_2024/resources/day8Input1.txt");
+		Path file = Paths.get("src/AoC_2024/resources/day9Input2.txt");
 		String string = null;
 		try {
 			string = Files.readString(file);
@@ -103,8 +103,8 @@ public class day9 {
 	}
 	
 	public static void part1ForReal() {
-		//String[] string = Fichier.lireLignes("src/resources/day8Input1.txt");
-		Path file = Paths.get("src/resources/day8Input9.txt");
+		//String[] string = Fichier.lireLignes("src/AoC_2024/resources/day8Input1.txt");
+		Path file = Paths.get("src/AoC_2024/resources/day8Input9.txt");
 		String string = null;
 		try {
 			string = Files.readString(file);
@@ -191,7 +191,7 @@ public class day9 {
 	public static void part2Original() {
 		long startTime = System.nanoTime();
 		
-		Path file = Paths.get("src/resources/day9Input2.txt");
+		Path file = Paths.get("src/AoC_2024/resources/day9Input2.txt");
 		String string = null;
 		try {
 			string = Files.readString(file);
@@ -293,7 +293,7 @@ public class day9 {
 	public static void part2() {
 		long startTime = System.nanoTime();
 		
-		Path file = Paths.get("src/resources/day9Input2.txt");
+		Path file = Paths.get("src/AoC_2024/resources/day9Input2.txt");
 		String string = null;
 		try {
 			string = Files.readString(file);
@@ -406,7 +406,7 @@ public class day9 {
 		public static void part2NewIdea() {
 			long startTime = System.nanoTime();
 			
-			Path file = Paths.get("src/resources/day9Input2.txt");
+			Path file = Paths.get("src/AoC_2024/resources/day9Input2.txt");
 			String string = null;
 			try {
 				string = Files.readString(file);
@@ -527,7 +527,7 @@ public class day9 {
 	public static void part2StringBuilder() {
 		long startTime = System.nanoTime();
 		
-		Path file = Paths.get("src/resources/day9Input2.txt");
+		Path file = Paths.get("src/AoC_2024/resources/day9Input2.txt");
 		String string = null;
 		try {
 			string = Files.readString(file);
