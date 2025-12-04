@@ -10,7 +10,7 @@ public class day3 {
         part2(file);
     }
 
-    public static void part2(String file) {
+    private static void part2(String file) {
 
         try(var reader = Buffer.reader(file)) {
             long total = 0;
@@ -64,7 +64,7 @@ public class day3 {
         return Long.parseLong(numbers);
     }
 
-    public static void part1(String file) {
+    private static void part1(String file) {
 
         try(var reader = Buffer.reader(file)) {
             var total = 0;
@@ -97,7 +97,7 @@ public class day3 {
             }
             System.out.println(total);
         } catch (Exception e) {
-
+            System.out.println(e.getMessage());
         }
     }
 }
