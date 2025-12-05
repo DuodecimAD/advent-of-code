@@ -7,10 +7,54 @@ import java.util.HashSet;
 
 public class day5 {
     public static void main(String[] args) {
-//        var file = "day5_ex.txt";
-        var file = "day5.txt";
-        part1(file);
-//        part2(file);
+        var file = "day5_ex.txt";
+//        var file = "day5.txt";
+//        part1(file);
+        part2(file);
+    }
+
+    // not working - lost in my mind's labyrinth
+    private static void part2(String file) {
+
+        var minMaxList = new ArrayList<Long[]>();
+        buildMinMaxList(file, minMaxList);
+        var total = 0;
+
+        var cleanedList = new HashSet<Long[]>();
+        for (var line : minMaxList) {
+            var toRemove = new HashSet<>();
+            for (var minMax : minMaxList){
+                if(minMax[0] == line[0] && minMax[1] == line[1]){
+                    break;
+                }
+                long min = line[0];
+                long max = line[1];
+//                System.out.println(minMax[0] + " - " + minMax[1] + " : " + line[0] + " - " + line[1]);
+                if((minMax[0] < line[0] && minMax[0] > line[1]) || (line[0] < minMax[0] && line[0] > minMax[1])){
+//                    3            10          3         14           10         3            10        5
+//                    16           12         16         18           12         16            12       18
+                    System.out.println(minMax[0] + " - " + minMax[1] + " : " + line[0] + " - " + line[1]);
+                    min = Math.min(minMax[0], line[0]);
+                }
+
+                if((minMax[1] > line[0] && minMax[1] < line[1]) || (line[1] > minMax[0] && line[1] < minMax[1])){
+                    System.out.println(minMax[0] + " - " + minMax[1] + " : " + line[0] + " - " + line[1]);
+                    max = Math.max(minMax[1], line[1]);
+                }
+                var newItem = new Long[]{min,max};
+                if (!cleanedList.contains(newItem)){
+                    cleanedList.add(newItem);
+                }
+            }
+        }
+
+        for (var line : cleanedList) {
+//            total += line[1]-line[0];
+            System.out.println(line[0] + " - " + line[1]);
+            System.out.println(line[1]-line[0]);
+        }
+
+        System.out.println("total : " + total);
     }
 
     private static void part1(String file) {
@@ -18,7 +62,11 @@ public class day5 {
         var minMaxList = new ArrayList<Long[]>();
         getItems(file, items);
         buildMinMaxList(file, minMaxList);
+        var total = getTotalFreshItem(minMaxList, items);
+        System.out.println("total : " + total);
+    }
 
+    private static int getTotalFreshItem(ArrayList<Long[]> minMaxList, HashSet<Long> items) {
         var total = 0;
         for (var minMax : minMaxList) {
             var itemsConcurentModificationCopy = new HashSet<>(items);
@@ -29,7 +77,7 @@ public class day5 {
                 }
             }
         }
-        System.out.println("total : " + total);
+        return total;
     }
 
     private static void buildMinMaxList(String file, ArrayList<Long[]> minMaxList) {
