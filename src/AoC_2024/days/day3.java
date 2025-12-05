@@ -17,7 +17,7 @@ public class day3 {
 
 	}
 
-	public static void part1() {
+    private static void part1() {
 		String[] file = Fichier.lireLignes("src/AoC_2024/resources/ex3Input2.txt");
 		String input = Arrays.toString(file);
 		String regex = "mul\\(\\d{1,3}[,]\\d{1,3}\\)";
@@ -55,7 +55,7 @@ public class day3 {
 
 	}
 
-	public static void part2() {
+    private static void part2() {
 		String[] file = Fichier.lireLignes("src/AoC_2024/resources/ex3Input2.txt");
 		String input = Arrays.toString(file);
 		String regex = "mul\\(\\d{1,3}[,]\\d{1,3}\\)|don't\\(\\)|do\\(\\)";

@@ -14,8 +14,8 @@ public class day7 {
 		part2ForReal();
 
 	}
-	
-	public static void part1() {
+
+    private static void part1() {
 		
 		char[] operators = {'+', '*'};
 		String[] string = Fichier.lireLignes("src/AoC_2024/resources/ex7Input1.txt");
@@ -73,8 +73,8 @@ public class day7 {
         }
         System.out.println("\nresult = " + result);
 	}
-	
-	public static void part2() {
+
+    private static void part2() {
 						
 		char[] operators = {'+', '*', '|'};
 		String[] string = Fichier.lireLignes("src/AoC_2024/resources/ex7Input1.txt");
@@ -170,8 +170,8 @@ public class day7 {
         }
         System.out.println("\nresultat final = " + result);
 	}
-	
-	public static void part2ForReal() {
+
+    private static void part2ForReal() {
 		
 		char[] operators = {'+', '*', '|'};
 		String[] string = Fichier.lireLignes("src/AoC_2024/resources/ex7Input2.txt");

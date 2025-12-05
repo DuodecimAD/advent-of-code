@@ -26,8 +26,8 @@ public class day11 {
 		part2After1YearAtHelmo();
 
 	}
-	
-	public static void part1() {
+
+    private static void part1() {
 		
 		List<Long> a = new ArrayList<>(Arrays.asList(3279L, 998884L, 1832781L, 517L, 8L, 18864L, 28L, 0L));
 		
@@ -74,7 +74,7 @@ public class day11 {
 	 *  Guess if i had the patience i would use memory for calculations but do it as batches to avoid heap overflow.
 	 * 
 	 */
-	public static void part2() {
+    private static void part2() {
 		
 		String PathA = "src/AoC_2024/resources/day11textA.txt";
 		String PathB = "src/AoC_2024/resources/day11textB.txt";
@@ -164,7 +164,7 @@ public class day11 {
 	}
 	
 	// still sucks
-	public static void part2AfterSomeHelmoPooClasses() {
+    private static void part2AfterSomeHelmoPooClasses() {
 		
 		String[] array = new String[] {"3279", "998884", "1832781", "517", "8", "18864", "28", "0"};
 		
@@ -206,7 +206,7 @@ public class day11 {
 	}
 	
 	// managed to improve the performance and lower the time but still reaching max heap at iteration 40
-	public static void part2After1YearAtHelmo() {
+    private static void part2After1YearAtHelmo() {
 		
 		List<Long> array = new ArrayList<>(Arrays.asList(3279L, 998884L, 1832781L, 517L, 8L, 18864L, 28L, 0L));
 		

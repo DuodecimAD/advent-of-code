@@ -13,8 +13,8 @@ public class day5 {
 		part1();
 
 	}
-	
-	public static void part1() {
+
+    private static void part1() {
 		String[] file = Fichier.lireLignes("src/AoC_2024/resources/ex5Input1.txt");
 		String[] file2 = Fichier.lireLignes("src/AoC_2024/resources/ex5Input2.txt");
 		

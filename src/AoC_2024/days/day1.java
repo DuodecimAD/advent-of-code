@@ -16,7 +16,7 @@ public class day1 {
 		similarity(test);
 }
 
-	public static int TrierTableau(String[] string) {
+	private static int TrierTableau(String[] string) {
 
 		String[] temp = new String[2];
 
@@ -46,7 +46,7 @@ public class day1 {
 
 	}
 
-	public static void similarity(String[] string) {
+	private static void similarity(String[] string) {
 		String[] temp = new String[2];
 
 		Integer [] tableau1 = new Integer[6];
