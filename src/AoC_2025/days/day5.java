@@ -3,20 +3,50 @@ package AoC_2025.days;
 import AoC_2025.io.Buffer;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashSet;
+import java.util.List;
 
 public class day5 {
     public static void main(String[] args) {
-        var file = "day5_ex.txt";
-//        var file = "day5.txt";
+//        var file = "day5_ex.txt";
+        var file = "day5.txt";
 //        part1(file);
-        part2(file);
+        part2Try2(file);
+    }
+
+    private static void part2Try2(String file) {
+        var minMaxList = new ArrayList<long[]>();
+        buildMinMaxList(file, minMaxList);
+        long total = 0;
+        minMaxList.sort(Comparator.comparingLong(a -> a[0]));
+
+        var cleanedList = new ArrayList<long[]>();
+        long[] current = minMaxList.getFirst();
+
+        for (int i = 1; i < minMaxList.size(); i++) {
+            long[] next = minMaxList.get(i);
+
+            if (next[0] <= current[1]) {
+                current[1] = Math.max(current[1], next[1]);
+            } else {
+                cleanedList.add(current);
+                current = next;
+            }
+        }
+
+        cleanedList.add(current);
+        for (var minMax : cleanedList) {
+            total += minMax[1]-minMax[0]+1;
+//            System.out.println(minMax[0] + " - " + minMax[1]);
+        }
+        System.out.println("total : " + total);
     }
 
     // not working - lost in my mind's labyrinth
     private static void part2(String file) {
 
-        var minMaxList = new ArrayList<Long[]>();
+        var minMaxList = new ArrayList<long[]>();
         buildMinMaxList(file, minMaxList);
         var total = 0;
 
@@ -59,14 +89,14 @@ public class day5 {
 
     private static void part1(String file) {
         var items = new HashSet<Long>();
-        var minMaxList = new ArrayList<Long[]>();
+        var minMaxList = new ArrayList<long[]>();
         getItems(file, items);
         buildMinMaxList(file, minMaxList);
         var total = getTotalFreshItem(minMaxList, items);
         System.out.println("total : " + total);
     }
 
-    private static int getTotalFreshItem(ArrayList<Long[]> minMaxList, HashSet<Long> items) {
+    private static int getTotalFreshItem(ArrayList<long[]> minMaxList, HashSet<Long> items) {
         var total = 0;
         for (var minMax : minMaxList) {
             var itemsConcurentModificationCopy = new HashSet<>(items);
@@ -80,7 +110,7 @@ public class day5 {
         return total;
     }
 
-    private static void buildMinMaxList(String file, ArrayList<Long[]> minMaxList) {
+    private static void buildMinMaxList(String file, ArrayList<long[]> minMaxList) {
         try(var reader = Buffer.reader(file)) {
             var line = reader.readLine();
             while (line != null){
@@ -90,7 +120,7 @@ public class day5 {
                     var minMax = line.split("-");
                     var min = Long.parseLong(minMax[0]);
                     var max = Long.parseLong(minMax[1]);
-                    minMaxList.add(new Long[]{min,max});
+                    minMaxList.add(new long[]{min,max});
                     line = reader.readLine();
                 }
             }
