@@ -1,8 +1,8 @@
-package AoC_2025.days;
+package aoc2025.days;
 
-import AoC_2025.io.Buffer;
+import aoc2025.io.Buffer;
 
-public class day3 {
+public class Day3 {
     public static void main(String[] args) {
 //        var file = "day3_ex.txt";
         var file = "day3.txt";

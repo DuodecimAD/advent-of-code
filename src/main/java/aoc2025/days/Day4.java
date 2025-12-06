@@ -1,6 +1,6 @@
-package AoC_2025.days;
+package aoc2025.days;
 
-import AoC_2025.io.Buffer;
+import aoc2025.io.Buffer;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-public class day4 {
+public class Day4 {
 
     private static final List<int[]> NEARBY = List.of(new int[]{0, 0}, new int[]{-1, 0}, new int[]{1, 0},
                                                     new int[]{0, -1}, new int[]{-1, -1}, new int[]{-1, 1},
@@ -25,7 +25,7 @@ public class day4 {
         if(!bool){
             return 0;
         }
-        List<String> toRemove = new ArrayList();
+        List<String> toRemove = new ArrayList<>();
         var total = 0;
         for (var loc : set) {
             var locToCheck = loc.split("@");

@@ -1,8 +1,17 @@
-package AoC_2025.days;
+package aoc2025.days;
 
-import AoC_2025.io.Buffer;
+import aoc2025.io.Buffer;
 
-public class day6 {
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.regex.Pattern;
+
+public class Day6 {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(Day6.class);
+    private static final Pattern  SPACES = Pattern.compile(" +");
+
     public static void main(String[] args) {
 //        var file = "day6_ex.txt";
         var file = "day6.txt";
@@ -14,38 +23,38 @@ public class day6 {
         try(var reader = Buffer.reader(file)) {
 
             var lines = reader.lines().toArray(String[]::new);
-            var operators = lines[lines.length-1].split(" +");
+            var operators = SPACES.split(lines[lines.length - 1]);
             var counterOperator = operators.length - 1;
             var length = lines[0].length();
             long total = 0;
             long totalLine = 0;
-            for (int i = length-1; i >= 0; i--) {
-                String number = String.valueOf(lines[0].charAt(i));
-                for (int j = 1; j < lines.length-1; j++) {
-                    number += lines[j].charAt(i);
+            for (var i = length-1; i >= 0; i--) {
+                var number = new StringBuilder(String.valueOf(lines[0].charAt(i)));
+                for (var j = 1; j < lines.length-1; j++) {
+                    number.append(lines[j].charAt(i));
                 }
-                if(number.isBlank()){
+                if(number.toString().isBlank()){
                     total += totalLine;
-//                    System.out.println("totalLine : " + totalLine);
+//                    LOGGER.info("totalLine : {}", totalLine);
                     totalLine = 0;
                     counterOperator--;
                     continue;
                 }
 //                number = number.replace(' ', '0');
                 if(totalLine != 0){
-                    totalLine = compute(totalLine, number.trim(), operators[counterOperator]);
+                    totalLine = compute(totalLine, number.toString().trim(), operators[counterOperator]);
                 } else {
-                    totalLine = Long.parseLong(number.trim());
+                    totalLine = Long.parseLong(number.toString().trim());
                 }
 
-//                System.out.println(number);
+//                LOGGER.info(number);
             }
-//            System.out.println("totalLine : " + totalLine);
+//            LOGGER.info("totalLine : {}", totalLine);
             total += totalLine;
-            System.out.println("total : " + total);
+            LOGGER.info("total : {}", total);
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            LOGGER.error(e.getMessage(), e);
         }
     }
 
@@ -53,21 +62,21 @@ public class day6 {
         try(var reader = Buffer.reader(file)) {
 
             var lines = reader.lines()
-                    .map(line -> line.trim().split(" +"))
+                    .map(line -> SPACES.split(line.trim()))
                     .toArray(String[][]::new);
             long total = 0;
 
-            for (int i = 0; i < lines[0].length; i++) {
-                long totalLine = Long.parseLong(lines[0][i]);
-                for (int j = 1; j < lines.length-1; j++) {
+            for (var i = 0; i < lines[0].length; i++) {
+                var totalLine = Long.parseLong(lines[0][i]);
+                for (var j = 1; j < lines.length-1; j++) {
                     totalLine = compute(totalLine, lines[j][i], lines[lines.length-1][i]);
                 }
                 total += totalLine;
-                System.out.println("totalLine : " + totalLine);
+//                LOGGER.info("totalLine : " + totalLine);
             }
-            System.out.println("total: " + total);
+            LOGGER.info("total: {}", total);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            LOGGER.error(e.getMessage(), e);
         }
     }
 

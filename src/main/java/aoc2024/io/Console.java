@@ -1,4 +1,4 @@
-package AoC_2024.io;
+package aoc2024.io;
 
 import java.io.BufferedReader;
 import java.io.IOException;
