@@ -1,13 +1,12 @@
-package AoC_2025.days;
+package aoc2025.days;
 
-import AoC_2025.io.Buffer;
+import aoc2025.io.Buffer;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashSet;
-import java.util.List;
 
-public class day5 {
+public class Day5 {
     public static void main(String[] args) {
 //        var file = "day5_ex.txt";
         var file = "day5.txt";
@@ -72,9 +71,7 @@ public class day5 {
                     max = Math.max(minMax[1], line[1]);
                 }
                 var newItem = new Long[]{min,max};
-                if (!cleanedList.contains(newItem)){
-                    cleanedList.add(newItem);
-                }
+                cleanedList.add(newItem);
             }
         }
 

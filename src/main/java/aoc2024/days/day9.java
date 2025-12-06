@@ -1,4 +1,4 @@
-package AoC_2024.days;
+package aoc2024.days;
 
 import java.io.IOException;
 import java.nio.file.Files;

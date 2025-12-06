@@ -1,9 +1,9 @@
-package AoC_2025.days;
+package aoc2025.days;
 
-import AoC_2025.io.Buffer;
+import aoc2025.io.Buffer;
 import java.io.IOException;
 
-public class day2 {
+public class Day2 {
 
     public static void main(String[] args) {
         var ex = "day2_ex.txt";
